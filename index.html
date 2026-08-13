@@ -1365,6 +1365,25 @@
     }
 
 }
+        .service-price {
+
+    margin-top: 10px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #fff0f8;
+
+    color: #7b286f;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    border: 1px solid #f0c9df;
+
+}
     </style>
 
 </head>
@@ -2045,47 +2064,48 @@
                         required
                     >
 
-                        <option value="">
-                            -- Select a service --
-                        </option>
+                        <option value="">Choose a service</option>
 
-                        <option value="Knotless Braids">
-                            Knotless Braids - KSh 800
-                        </option>
+             <option value="Knotless Braids">
+              Knotless Braids — KSh 800
+           </option>
 
-                        <option value="Box Braids">
-                            Box Braids - KSh 600
-                        </option>
+             <option value="Box Braids">
+                Box Braids — KSh 600
+            </option>
 
-                        <option value="Cornrows">
-                            Cornrows - KSh 500
-                        </option>
+            <option value="Cornrows">
+                  Cornrows — KSh 500
+             </option>
 
-                        <option value="Nail Polish">
-                            Nail Polish - KSh 400
-                        </option>
+           <option value="Nail Polish">
+                    Nail Polish — KSh 400
+           </option>
 
-                        <option value="Wash & Blow-Dry">
-                            Wash & Blow-Dry - KSh 150
-                        </option>
+            <option value="Wash and Blowdry">
+                  Wash and Blowdry — KSh 150
+             </option>
 
-                        <option value="Crochet">
-                            Crochet - KSh 600
-                        </option>
+            <option value="Crochet">
+                Crochet — KSh 600
+                 </option>
 
-                        <option value="Zigzag">
-                            Zigzag - KSh 300
-                        </option>
+                   <option value="Zigzag">
+               Zigzag — KSh 300
+               </option>
 
-                        <option value="Plain Lines">
-                            Plain Lines - KSh 200
-                        </option>
+                <option value="Plain Lines">
+                     Plain Lines — KSh 200
+            </option>
 
-                        <option value="Twistout">
-                            Twistout - KSh 450
-                        </option>
+                <option value="Twistout">
+               Twistout — KSh 450
+              </option>
 
                     </select>
+                    <div id="servicePrice" class="service-price">
+               Select a service to see the price
+            </div>
 
                 </div>
 
@@ -2639,6 +2659,61 @@ menuItems.forEach(
 
             }
         );
+
+    }
+);
+        // =========================================
+// SERVICE PRICE DISPLAY
+// =========================================
+
+const serviceSelect =
+    document.getElementById("service");
+
+const servicePrice =
+    document.getElementById("servicePrice");
+
+const servicePrices = {
+
+    "Knotless Braids": 800,
+
+    "Box Braids": 600,
+
+    "Cornrows": 500,
+
+    "Nail Polish": 400,
+
+    "Wash and Blowdry": 150,
+
+    "Crochet": 600,
+
+    "Zigzag": 300,
+
+    "Plain Lines": 200,
+
+    "Twistout": 450
+
+};
+
+
+serviceSelect.addEventListener(
+    "change",
+    function () {
+
+        const selectedService =
+            serviceSelect.value;
+
+        if (servicePrices[selectedService]) {
+
+            servicePrice.textContent =
+                "Price: KSh " +
+                servicePrices[selectedService];
+
+        } else {
+
+            servicePrice.textContent =
+                "Select a service to see the price";
+
+        }
 
     }
 );
