@@ -979,6 +979,206 @@
             }
 
         }
+        /* =========================================
+   MAMA DAIZY SALON - MOBILE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+        font-size: 15px;
+    }
+
+    nav {
+        width: 100%;
+        padding: 12px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 11px;
+        white-space: nowrap;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 70px 20px 50px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section {
+        padding: 55px 18px;
+        box-sizing: border-box;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .services-grid,
+    .styles-grid,
+    .cards-container {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .service-card,
+    .style-card {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .service-card img,
+    .style-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .booking-container,
+    .booking-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .booking-form {
+        padding: 20px 16px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .booking-form textarea {
+        min-height: 110px;
+    }
+
+    .service-info-box {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        min-height: 52px;
+    }
+
+    .success-message {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 25px 18px;
+    }
+
+    .appointments-section {
+        padding: 55px 18px;
+    }
+
+    .appointments-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px;
+    }
+
+    .clear-bookings {
+        width: 100%;
+    }
+
+    .appointment-card {
+        padding: 17px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        padding: 35px 18px;
+        text-align: center;
+    }
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 7px 9px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 60px 16px 40px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .service-card img,
+    .style-card img {
+        height: 210px;
+    }
+
+    .booking-form {
+        padding: 16px 12px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .submit-button {
+        font-size: 15px;
+    }
+}
 
     </style>
 
