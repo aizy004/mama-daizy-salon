@@ -1914,6 +1914,254 @@
     }
 
 }
+        /* =========================================
+   CONTACT & LOCATION
+========================================= */
+
+.contact-section {
+
+    padding: 80px 6%;
+
+    background: #ffffff;
+
+}
+
+
+.contact-container {
+
+    max-width: 1150px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.contact-card {
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fc,
+            #f8edfa
+        );
+
+    border: 1px solid #f0d4e4;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(75, 22, 76, 0.07);
+
+    transition: 0.3s;
+
+}
+
+
+.contact-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(75, 22, 76, 0.12);
+
+}
+
+
+.contact-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.contact-card h3 {
+
+    margin: 8px 0;
+
+    color: #64205f;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.contact-card p {
+
+    margin: 8px 0;
+
+    color: #76536f;
+
+    font-size: 14px;
+
+}
+
+
+.contact-card strong {
+
+    display: block;
+
+    color: #7b286f;
+
+    margin: 8px 0;
+
+}
+
+
+.contact-card small {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #8a7085;
+
+    font-size: 12px;
+
+}
+
+
+.contact-link {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #9b3f91;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.contact-link:hover {
+
+    color: #c45b9b;
+
+}
+
+
+.contact-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.contact-book-button,
+.contact-whatsapp-button {
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.contact-book-button {
+
+    background: #7b286f;
+
+    color: white;
+
+}
+
+
+.contact-whatsapp-button {
+
+    background: #c45b9b;
+
+    color: white;
+
+}
+
+
+.contact-book-button:hover,
+.contact-whatsapp-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   CONTACT - PHONE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .contact-section {
+
+        padding: 60px 18px;
+
+    }
+
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+    }
+
+
+    .contact-card {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .contact-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .contact-book-button,
+    .contact-whatsapp-button {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+    }
+
+}
     </style>
 
 </head>
@@ -3003,7 +3251,159 @@
     </div>
 
 </section>
+<!-- =========================================
+     CONTACT & LOCATION
+========================================= -->
 
+<section id="contact" class="contact-section">
+
+    <div class="section-heading">
+
+        <p class="small-heading">
+            COME VISIT US
+        </p>
+
+        <h2>
+            We'd Love to See You 💜
+        </h2>
+
+        <p>
+            Have a question or want to book an appointment?
+            Get in touch with Mama Daizy Salon.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📍
+            </div>
+
+            <h3>
+                Our Location
+            </h3>
+
+            <p>
+                Your Salon Location
+            </p>
+
+            <small>
+                Kenya
+            </small>
+
+        </div>
+
+
+        <!-- OPENING HOURS -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                🕐
+            </div>
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <p>
+                Monday – Saturday
+            </p>
+
+            <strong>
+                8:00 AM – 6:00 PM
+            </strong>
+
+            <small>
+                Sunday – Closed
+            </small>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📞
+            </div>
+
+            <h3>
+                Call Us
+            </h3>
+
+            <a
+                href="tel:+254796311209"
+                class="contact-link"
+            >
+                0796 311 209
+            </a>
+
+            <small>
+                We're happy to help
+            </small>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                💬
+            </div>
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <a
+                href="https://wa.me/254796311209"
+                target="_blank"
+                class="contact-link"
+            >
+                Chat With Us
+            </a>
+
+            <small>
+                Quick responses
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="contact-actions">
+
+        <a
+            href="#booking"
+            class="contact-book-button"
+        >
+            📅 Book an Appointment
+        </a>
+
+        <a
+            href="https://wa.me/254796311209"
+            target="_blank"
+            class="contact-whatsapp-button"
+        >
+            💬 WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
 
 <!-- =========================
          FOOTER
