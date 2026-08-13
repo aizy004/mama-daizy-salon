@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MAMA DAIZY SALON</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8fc;
+            color: #3b173d;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #4b164c,
+                #7b286f
+            );
+
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 4px 20px rgba(75, 22, 76, 0.25);
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: #f5a8ca;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5a8ca;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(75, 22, 76, 0.70),
+                    rgba(123, 40, 111, 0.65)
+                ),
+
+                url("images/salon.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content p:first-child {
+            color: #f8b6d4;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+
+            font-size: 58px;
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f5a8ca;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin: auto;
+
+            font-size: 18px;
+
+            color: #fff0f7;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 35px;
+
+            background: #f5a8ca;
+
+            color: #4b164c;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-section {
+            padding: 90px 6%;
+
+            background: #fff8fc;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 50px;
+        }
+
+        .small-title {
+            color: #c45b9b;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+
+            font-size: 42px;
+
+            color: #4b164c;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #705c70;
+        }
+
+
+        /* =========================
+           SERVICE GRID
+        ========================= */
+
+        .styles-container {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           SERVICE CARD
+        ========================= */
+
+        .style-card {
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 25px rgba(75, 22, 76, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .style-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(75, 22, 76, 0.20);
+        }
+
+
+        /* =========================
+           IMAGES
+        ========================= */
+
+        .style-image {
+            width: 100%;
+
+            height: 250px;
+
+            overflow: hidden;
+
+            background: #f1dce9;
+        }
+
+        .style-image img {
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .style-card:hover
+        .style-image img {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           SERVICE INFORMATION
+        ========================= */
+
+        .style-info {
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .style-info h3 {
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            color: #4b164c;
+
+            margin-bottom: 10px;
+        }
+
+        .style-info p {
+            color: #705c70;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+
+            flex: 1;
+        }
+
+        .style-details {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+            color: #5d275f;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .book-button {
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+
+            padding: 13px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                90deg,
+                #c45b9b,
+                #e989b8
+            );
+
+            color: white;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .book-button:hover {
+            background: #4b164c;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           BOOKING SECTION
+        ========================= */
+
+        .booking-section {
+            padding: 90px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fdf1f8,
+                    #f2dded
+                );
+        }
+
+        .booking-container {
+            max-width: 750px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(75, 22, 76, 0.15);
+        }
+
+        .booking-heading {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .booking-heading h2 {
+            font-family: Georgia, serif;
+
+            font-size: 38px;
+
+            color: #5c1f61;
+
+            margin-bottom: 15px;
+        }
+
+        .booking-heading p:last-child {
+            color: #6d586f;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .booking-form {
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: #5c1f61;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border:
+                1px solid #e4c9df;
+
+            border-radius: 12px;
+
+            background: #fffafd;
+
+            color: #4b164c;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c56aa0;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(243, 168, 202, 0.25);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+
+            min-height: 110px;
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-button {
+            border: none;
+
+            cursor: pointer;
+
+            background: #4b164c;
+
+            color: white;
+
+            padding: 16px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            margin-top: 10px;
+
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #f3a8ca;
+
+            color: #4b164c;
+
+            transform: translateY(-2px);
+            /* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #fff1f8;
+
+    border: 1px solid #edb6d3;
+
+    border-radius: 20px;
+
+    color: #4b164c;
+
+    animation: fadeIn 0.5s ease;
+
+}
+
+
+.success-message.show {
+
+    display: block;
+
+}
+
+
+.success-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #7b286f;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+
+.success-message h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.success-message p {
+
+    color: #705c70;
+
+    margin-bottom: 8px;
+
+}
+
+
+.success-message strong {
+
+    color: #7b286f;
+
+}
+
+
+.confirmation-text {
+
+    font-size: 14px;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+        }
+        /* =========================
+   APPOINTMENTS DASHBOARD
+========================= */
+
+.appointments-section {
+
+    padding: 90px 6%;
+
+    background: #fff8fc;
+
+}
+
+
+.appointments-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(75, 22, 76, 0.12);
+
+}
+
+
+.appointments-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.appointments-top h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #4b164c;
+
+}
+
+
+.clear-bookings {
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    background: #f5d7e7;
+
+    color: #7b286f;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.clear-bookings:hover {
+
+    background: #7b286f;
+
+    color: white;
+
+}
+
+
+.appointments-list {
+
+    display: grid;
+
+    gap: 15px;
+
+}
+
+
+.appointment-card {
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #fff5fa;
+
+    border-left: 5px solid #c45b9b;
+
+}
+
+
+.appointment-card h4 {
+
+    color: #4b164c;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.appointment-card p {
+
+    color: #705c70;
+
+    margin: 5px 0;
+
+}
+
+
+.appointment-card strong {
+
+    color: #5c1f61;
+
+}
+
+
+.delete-booking {
+
+    margin-top: 12px;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #7b286f;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+.delete-booking:hover {
+
+    background: #4b164c;
+
+}
+
+
+.no-bookings {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: #705c70;
+
+}
+
+
+.no-bookings div {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.no-bookings h3 {
+
+    color: #4b164c;
+
+    font-family: Georgia, serif;
+
+    margin-bottom: 5px;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .appointments-container {
+
+        padding: 20px;
+
+    }
+
+    .appointments-top {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #351035;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        footer h3 span {
+            color: #f5a8ca;
+        }
+
+        footer p {
+            color: #e6cfe1;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .styles-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            nav {
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .styles-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .booking-container {
+                padding: 28px 20px;
+            }
+
+            .booking-heading h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="#" class="logo">
+            MAMA DAIZY <span>SALON</span>
+        </a>
+
+        <nav>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#styles">
+        Services
+    </a>
+
+    <a href="#booking">
+        Book
+    </a>
+
+    <a href="#appointments">
+        Appointments
+    </a>
+
+    <a href="#contact">
+        Contact
+    </a>
+
+</nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p>
+                BEAUTY • STYLE • CONFIDENCE
+            </p>
+
+            <h1>
+
+                Welcome to
+                <span>Mama Daizy Salon</span>
+
+            </h1>
+
+            <p class="hero-description">
+
+                Discover beautiful hairstyles,
+                professional hair care and
+                elegant nail services designed
+                to make you feel confident.
+
+            </p>
+
+            <a
+                href="#styles"
+                class="hero-button"
+            >
+                Explore Our Services
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section
+        class="services-section"
+        id="styles"
+    >
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                OUR SERVICES
+            </p>
+
+            <h2>
+                Find Your Perfect Style
+            </h2>
+
+            <p>
+
+                Explore our beautiful collection
+                of hairstyles and beauty services
+                and find the perfect look for you.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="styles-container">
+
+
+            <!-- KNOTLESS -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/knotless.jpg"
+                        alt="Knotless Braids"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Knotless Braids
+                    </h3>
+
+                    <p>
+                        Light and comfortable braids
+                        perfect for an effortless
+                        everyday look.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 800
+                        </span>
+
+                        <span>
+                            ⏱️ 4 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX BRAIDS -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/boxbraids.jpg"
+                        alt="Box Braids"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Box Braids
+                    </h3>
+
+                    <p>
+                        Classic protective braids
+                        with a beautiful and timeless
+                        finish.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 600
+                        </span>
+
+                        <span>
+                            ⏱️ 4 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CORNROWS -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Cornrows.jpg"
+                        alt="Cornrows"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Cornrows
+                    </h3>
+
+                    <p>
+                        Neat and beautiful cornrow
+                        designs customized to your
+                        preferred look.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 500
+                        </span>
+
+                        <span>
+                            ⏱️ 2 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAIL POLISH -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Nailpolish.jpg"
+                        alt="Nail Polish"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Nail Polish
+                    </h3>
+
+                    <p>
+                        Elegant nail polish finishes
+                        for a polished and beautiful
+                        look.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 400
+                        </span>
+
+                        <span>
+                            ⏱️ 1 hr
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WASH AND BLOWDRY -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Wash and Blowdry.jpg"
+                        alt="Wash and Blow-Dry"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Wash & Blow-Dry
+                    </h3>
+
+                    <p>
+                        Refresh your hair with a
+                        professional wash and beautiful
+                        blow-dry finish.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 150
+                        </span>
+
+                        <span>
+                            ⏱️ 1 hr
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CROCHET -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Crochet.png"
+                        alt="Crochet Hairstyle"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Crochet
+                    </h3>
+
+                    <p>
+                        Beautiful crochet styles that
+                        give your hair a stylish and
+                        protective finish.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 600
+                        </span>
+
+                        <span>
+                            ⏱️ 3 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ZIGZAG -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Zigzag.png"
+                        alt="Zigzag Hairstyle"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Zigzag
+                    </h3>
+
+                    <p>
+                        Stylish zigzag patterns created
+                        with neat, creative and
+                        beautiful lines.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 300
+                        </span>
+
+                        <span>
+                            ⏱️ 2 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PLAIN LINES -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Plain lines.png"
+                        alt="Plain Lines Hairstyle"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Plain Lines
+                    </h3>
+
+                    <p>
+                        Simple, neat and elegant
+                        straight-line designs for a
+                        clean everyday look.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 200
+                        </span>
+
+                        <span>
+                            ⏱️ 1.5 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TWISTOUT -->
+
+            <div class="style-card">
+
+                <div class="style-image">
+
+                    <img
+                        src="images/Twistout.jpg"
+                        alt="Twistout Hairstyle"
+                    >
+
+                </div>
+
+                <div class="style-info">
+
+                    <h3>
+                        Twistout
+                    </h3>
+
+                    <p>
+                        Beautiful, defined natural curls
+                        with a soft and stylish finish.
+                    </p>
+
+                    <div class="style-details">
+
+                        <span>
+                            💰 KSh 450
+                        </span>
+
+                        <span>
+                            ⏱️ 2 hrs
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="book-button"
+                    >
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOOKING
+    ========================= -->
+
+    <section
+        class="booking-section"
+        id="booking"
+    >
+
+        <div class="booking-container">
+
+            <div class="booking-heading">
+
+                <p class="small-title">
+                    BOOK AN APPOINTMENT
+                </p>
+
+                <h2>
+                    Reserve Your Beauty Session
+                </h2>
+
+                <p>
+                    Fill in the form below and
+                    choose your preferred service,
+                    date and time.
+                </p>
+
+            </div>
+
+
+            <form class="booking-form" id="bookingForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="e.g. 0712 345 678"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- SERVICE -->
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Choose Service
+                    </label>
+
+                    <select
+                        id="service"
+                        name="service"
+                        required
+                    >
+
+                        <option value="">
+                            -- Select a service --
+                        </option>
+
+                        <option value="Knotless Braids">
+                            Knotless Braids - KSh 800
+                        </option>
+
+                        <option value="Box Braids">
+                            Box Braids - KSh 600
+                        </option>
+
+                        <option value="Cornrows">
+                            Cornrows - KSh 500
+                        </option>
+
+                        <option value="Nail Polish">
+                            Nail Polish - KSh 400
+                        </option>
+
+                        <option value="Wash & Blow-Dry">
+                            Wash & Blow-Dry - KSh 150
+                        </option>
+
+                        <option value="Crochet">
+                            Crochet - KSh 600
+                        </option>
+
+                        <option value="Zigzag">
+                            Zigzag - KSh 300
+                        </option>
+
+                        <option value="Plain Lines">
+                            Plain Lines - KSh 200
+                        </option>
+
+                        <option value="Twistout">
+                            Twistout - KSh 450
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label for="date">
+                        Appointment Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- TIME -->
+
+                <div class="form-group">
+
+                    <label for="time">
+                        Preferred Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="time"
+                        name="time"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        rows="4"
+                        placeholder="Anything you'd like us to know?"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+
+                    💜 Book My Appointment
+
+                </button>
+
+
+            </form>
+
+<div id="successMessage" class="success-message">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <h3>
+        Booking Received! 💜
+    </h3>
+
+    <p>
+        Thank you for choosing
+        <strong>MAMA DAIZY SALON</strong>.
+    </p>
+
+    <p>
+        Your appointment request has been
+        received successfully.
+    </p>
+
+    <p class="confirmation-text">
+        We will contact you to confirm your appointment.
+    </p>
+
+</div>
+
+</div>
+
+</section>\
+<!-- =========================
+     APPOINTMENTS DASHBOARD
+========================= -->
+
+<section class="appointments-section" id="appointments">
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            SALON MANAGEMENT
+        </p>
+
+        <h2>
+            Mama Daizy Appointments
+        </h2>
+
+        <p>
+            View and manage customer appointments.
+        </p>
+
+    </div>
+
+
+    <div class="appointments-container">
+
+        <div class="appointments-top">
+
+            <h3>
+                📅 Bookings
+            </h3>
+
+            <button
+                type="button"
+                class="clear-bookings"
+                id="clearBookings"
+            >
+                🗑️ Clear All
+            </button>
+
+        </div>
+
+
+        <div
+            id="appointmentsList"
+            class="appointments-list"
+        >
+
+            <div class="no-bookings">
+                <div>💜</div>
+
+                <h3>
+                    No appointments yet
+                </h3>
+
+                <p>
+                    Customer bookings will appear here.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer id="contact">
+
+        <h3>
+            MAMA DAIZY <span>SALON</span>
+        </h3>
+
+        <p>
+            Beauty • Style • Confidence
+        </p>
+
+        <p>
+            © 2026 MAMA DAIZY SALON.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+    <script>
+
+    const bookingForm =
+        document.getElementById("bookingForm");
+        const dateInput = document.getElementById("date");
+
+
+// Prevent customers from selecting a past date
+
+const today = new Date();
+
+const year = today.getFullYear();
+
+const month = String(
+    today.getMonth() + 1
+).padStart(2, "0");
+
+const day = String(
+    today.getDate()
+).padStart(2, "0");
+
+const todayString =
+    `${year}-${month}-${day}`;
+
+dateInput.min = todayString;
+
+    const successMessage =
+        document.getElementById("successMessage");
+
+
+    bookingForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            // Get customer information
+
+            const name =
+                document.getElementById("name").value;
+
+            const phone =
+                document.getElementById("phone").value;
+
+            const service =
+                document.getElementById("service").value;
+
+            const date =
+                document.getElementById("date").value;
+
+            const time =
+                document.getElementById("time").value;
+
+            const notes =
+                document.getElementById("notes").value;
+
+
+            // WhatsApp message
+
+            const message =
+
+                `💜 *MAMA DAIZY SALON - APPOINTMENT REQUEST* 💜
+
+Hello Mama Daizy Salon!
+
+I would like to book an appointment.
+
+👤 *Name:* ${name}
+
+📱 *Phone:* ${phone}
+
+💇 *Service:* ${service}
+
+📅 *Date:* ${date}
+
+⏰ *Time:* ${time}
+
+📝 *Additional Notes:* ${notes || "None"}
+
+Thank you! 💜`;
+
+
+            // Salon WhatsApp number
+
+            const whatsappNumber =
+                "254796311209";
+                // =========================
+// SAVE BOOKING
+// =========================
+
+const booking = {
+
+    name: name,
+
+    phone: phone,
+
+    service: service,
+
+    date: date,
+
+    time: time,
+
+    notes: notes,
+
+    createdAt: new Date().toISOString()
+
+};
+
+
+let bookings =
+    JSON.parse(
+        localStorage.getItem("mamaDaizyBookings")
+    ) || [];
+
+
+bookings.push(booking);
+
+
+localStorage.setItem(
+    "mamaDaizyBookings",
+    JSON.stringify(bookings)
+);
+  // Create WhatsApp link
+
+            const whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+
+            // Open WhatsApp
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+
+            // Show confirmation
+
+            successMessage.classList.add("show");
+
+
+            // Reset form
+
+            bookingForm.reset();
+
+
+            // Scroll to confirmation
+
+            successMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+    );
+    // =========================
+// DISPLAY BOOKINGS
+// =========================
+
+const appointmentsList =
+    document.getElementById("appointmentsList");
+
+
+function displayBookings() {
+
+    const bookings =
+        JSON.parse(
+            localStorage.getItem("mamaDaizyBookings")
+        ) || [];
+
+
+    if (bookings.length === 0) {
+
+        appointmentsList.innerHTML = `
+
+            <div class="no-bookings">
+
+                <div>💜</div>
+
+                <h3>
+                    No appointments yet
+                </h3>
+
+                <p>
+                    Customer bookings will appear here.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    appointmentsList.innerHTML = "";
+
+
+    bookings.forEach(
+        function(booking, index) {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "appointment-card";
+
+
+            card.innerHTML = `
+
+                <h4>
+                    💜 ${booking.name}
+                </h4>
+
+                <p>
+                    📱 <strong>Phone:</strong>
+                    ${booking.phone}
+                </p>
+
+                <p>
+                    💇 <strong>Service:</strong>
+                    ${booking.service}
+                </p>
+
+                <p>
+                    📅 <strong>Date:</strong>
+                    ${booking.date}
+                </p>
+
+                <p>
+                    ⏰ <strong>Time:</strong>
+                    ${booking.time}
+                </p>
+
+                <p>
+                    📝 <strong>Notes:</strong>
+                    ${booking.notes || "None"}
+                </p>
+
+                <button
+                    class="delete-booking"
+                    onclick="deleteBooking(${index})"
+                >
+                    🗑️ Delete Booking
+                </button>
+
+            `;
+
+
+            appointmentsList.appendChild(card);
+
+        }
+    );
+
+}
+
+
+// =========================
+// DELETE ONE BOOKING
+// =========================
+
+function deleteBooking(index) {
+
+    let bookings =
+        JSON.parse(
+            localStorage.getItem("mamaDaizyBookings")
+        ) || [];
+
+
+    bookings.splice(index, 1);
+
+
+    localStorage.setItem(
+        "mamaDaizyBookings",
+        JSON.stringify(bookings)
+    );
+
+
+    displayBookings();
+
+}
+
+
+// =========================
+// CLEAR ALL BOOKINGS
+// =========================
+
+const clearBookings =
+    document.getElementById("clearBookings");
+
+
+clearBookings.addEventListener(
+    "click",
+    function() {
+
+        const confirmDelete =
+            confirm(
+                "Are you sure you want to delete all appointments?"
+            );
+
+
+        if (confirmDelete) {
+
+            localStorage.removeItem(
+                "mamaDaizyBookings"
+            );
+
+            displayBookings();
+
+        }
+
+    }
+);
+
+
+// Load bookings when page opens
+
+displayBookings();
+
+</script>
+</body>
+
+</html>
