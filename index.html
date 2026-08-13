@@ -1384,6 +1384,45 @@
     border: 1px solid #f0c9df;
 
 }
+        /* =========================================
+   DATE & TIME BOOKING FIELDS
+========================================= */
+
+.booking-form input[type="date"],
+.booking-form input[type="time"] {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #e5b9d2;
+
+    border-radius: 10px;
+
+    background: #fffafd;
+
+    color: #4b164c;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+}
+
+
+.booking-form input[type="date"]:focus,
+.booking-form input[type="time"]:focus {
+
+    outline: none;
+
+    border-color: #9b3f91;
+
+    box-shadow:
+        0 0 0 3px rgba(155, 63, 145, 0.12);
+
+}
     </style>
 
 </head>
@@ -2139,12 +2178,13 @@
                     </label>
 
                     <input
-                        type="time"
-                        id="time"
-                        name="time"
-                        required
-                    >
-
+    type="time"
+    id="time"
+    name="time"
+    min="08:00"
+    max="19:00"
+    required
+>
                 </div>
 
 
