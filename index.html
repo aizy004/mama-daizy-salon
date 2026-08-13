@@ -1723,6 +1723,197 @@
     }
 
 }
+        /* =========================================
+   CUSTOMER REVIEWS
+========================================= */
+
+.reviews-section {
+
+    padding: 80px 6%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fc,
+            #f8edfa
+        );
+
+}
+
+
+.reviews-container {
+
+    max-width: 1150px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.review-card {
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    border: 1px solid #f0d4e4;
+
+    box-shadow:
+        0 10px 30px
+        rgba(75, 22, 76, 0.08);
+
+    transition: 0.3s;
+
+}
+
+
+.review-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(75, 22, 76, 0.14);
+
+}
+
+
+.stars {
+
+    color: #c45b9b;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.review-text {
+
+    color: #60475e;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    min-height: 105px;
+
+}
+
+
+.review-author {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.author-circle {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7b286f,
+            #c45b9b
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+.review-author strong {
+
+    display: block;
+
+    color: #64205f;
+
+}
+
+
+.review-author span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a7085;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   REVIEWS ON PHONES
+========================================= */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+
+        padding: 60px 18px;
+
+    }
+
+
+    .reviews-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .review-card {
+
+        padding: 24px 20px;
+
+    }
+
+
+    .review-text {
+
+        min-height: auto;
+
+    }
+
+}
     </style>
 
 </head>
@@ -1766,6 +1957,9 @@
         <a href="#styles">
             Services
         </a>
+        <a href="#reviews">
+        Reviews
+    </a>
 
         <a href="#booking">
             Book
@@ -2314,7 +2508,120 @@
 
     </section>
 
+     <!-- =========================================
+     CUSTOMER REVIEWS
+========================================= -->
 
+<section id="reviews" class="reviews-section">
+
+    <div class="section-heading">
+
+        <p class="small-heading">
+            WHAT OUR CLIENTS SAY
+        </p>
+
+        <h2>
+            Loved by Our Clients 💜
+        </h2>
+
+        <p>
+            Beautiful styles, friendly service and
+            a salon experience made just for you.
+        </p>
+
+    </div>
+
+
+    <div class="reviews-container">
+
+
+        <!-- REVIEW 1 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “The service was amazing and my hairstyle
+                came out exactly the way I wanted. I will
+                definitely come back!”
+            </p>
+
+            <div class="review-author">
+                <div class="author-circle">
+                    D
+                </div>
+
+                <div>
+                    <strong>Happy Client</strong>
+                    <span>Salon Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW 2 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “I loved how neat and beautiful my hair
+                looked. The salon experience was lovely
+                and relaxing.”
+            </p>
+
+            <div class="review-author">
+                <div class="author-circle">
+                    A
+                </div>
+
+                <div>
+                    <strong>Happy Client</strong>
+                    <span>Salon Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW 3 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “Beautiful work, affordable prices and
+                excellent customer service. I highly
+                recommend Mama Daizy Salon.”
+            </p>
+
+            <div class="review-author">
+                <div class="author-circle">
+                    M
+                </div>
+
+                <div>
+                    <strong>Happy Client</strong>
+                    <span>Salon Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
 
     <!-- =========================
          BOOKING
