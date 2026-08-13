@@ -2162,6 +2162,117 @@
     }
 
 }
+    /* =========================================
+   FLOATING WHATSAPP BUTTON
+========================================= */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    z-index: 10000;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 18px;
+
+    background: #7b286f;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px
+        rgba(75, 22, 76, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.floating-whatsapp:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(75, 22, 76, 0.35);
+
+}
+
+
+.whatsapp-icon {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+}
+
+
+.whatsapp-text {
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .floating-whatsapp {
+
+        right: 16px;
+
+        bottom: 16px;
+
+        width: 52px;
+
+        height: 52px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+    }
+
+
+    .whatsapp-icon {
+
+        font-size: 23px;
+
+    }
+
+
+    .whatsapp-text {
+
+        display: none;
+
+    }
+
+}    
     </style>
 
 </head>
@@ -3314,16 +3425,12 @@
             </h3>
 
             <p>
-                Monday – Saturday
+                Monday – sunday
             </p>
 
             <strong>
-                8:00 AM – 6:00 PM
+                8:00 AM – 7:00 PM
             </strong>
-
-            <small>
-                Sunday – Closed
-            </small>
 
         </div>
 
@@ -3404,7 +3511,23 @@
     </div>
 
 </section>
+<!-- =========================================
+     FLOATING WHATSAPP BUTTON
+========================================= -->
 
+<a
+    href="https://wa.me/254796311209?text=Hello%20Mama%20Daizy%20Salon%20%F0%9F%92%9C%20I%20would%20like%20to%20make%20an%20appointment."
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Mama Daizy Salon on WhatsApp"
+>
+    <span class="whatsapp-icon">💬</span>
+
+    <span class="whatsapp-text">
+        Chat With Us
+    </span>
+</a>
 <!-- =========================
          FOOTER
     ========================= -->
