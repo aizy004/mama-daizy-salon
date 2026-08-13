@@ -1423,6 +1423,306 @@
         0 0 0 3px rgba(155, 63, 145, 0.12);
 
 }
+        /* =========================================
+   PROFESSIONAL BOOKING CONFIRMATION
+========================================= */
+
+.booking-confirmation {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 35px auto;
+
+    padding: 35px 28px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #fff4fa
+    );
+
+    border: 1px solid #f0c9df;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(75, 22, 76, 0.12);
+
+    text-align: center;
+
+    animation: confirmationAppear 0.5s ease;
+
+}
+
+
+@keyframes confirmationAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.confirmation-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #8e3a87;
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(142, 58, 135, 0.25);
+
+}
+
+
+.booking-confirmation h2 {
+
+    margin: 5px 0 8px;
+
+    color: #64205f;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+}
+
+
+.confirmation-subtitle {
+
+    margin-bottom: 25px;
+
+    color: #76536f;
+
+}
+
+
+.confirmation-details {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 8px 18px;
+
+    text-align: left;
+
+    border: 1px solid #f2d9e7;
+
+}
+
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 4px;
+
+    border-bottom: 1px solid #f3e5ed;
+
+}
+
+
+.detail-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.detail-row span {
+
+    color: #76536f;
+
+    font-size: 14px;
+
+}
+
+
+.detail-row strong {
+
+    color: #64205f;
+
+    text-align: right;
+
+    font-size: 14px;
+
+}
+
+
+.notes-row {
+
+    align-items: flex-start;
+
+}
+
+
+.confirmation-message {
+
+    margin: 22px 0;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: #fff0f8;
+
+    color: #64205f;
+
+    font-size: 14px;
+
+}
+
+
+.confirmation-message p {
+
+    margin: 5px 0;
+
+}
+
+
+.confirmation-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.whatsapp-button,
+.new-booking-button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.whatsapp-button {
+
+    background: #8e3a87;
+
+    color: white;
+
+}
+
+
+.whatsapp-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(142, 58, 135, 0.25);
+
+}
+
+
+.new-booking-button {
+
+    background: white;
+
+    color: #8e3a87;
+
+    border: 1px solid #dca8c8;
+
+}
+
+
+.new-booking-button:hover {
+
+    background: #fff0f8;
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 480px) {
+
+    .booking-confirmation {
+
+        padding: 28px 16px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .booking-confirmation h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .detail-row {
+
+        padding: 13px 2px;
+
+    }
+
+
+    .detail-row span,
+    .detail-row strong {
+
+        font-size: 13px;
+
+    }
+
+}
     </style>
 
 </head>
@@ -2221,7 +2521,89 @@
 
 
             </form>
+<div id="bookingConfirmation" class="booking-confirmation">
 
+    <div class="confirmation-icon">
+        ✓
+    </div>
+
+    <h2>Booking Received! 💜</h2>
+
+    <p class="confirmation-subtitle">
+        Thank you for choosing MAMA DAIZY SALON.
+    </p>
+
+    <div class="confirmation-details">
+
+        <div class="detail-row">
+            <span>👤 Name</span>
+            <strong id="confirmName">-</strong>
+        </div>
+
+        <div class="detail-row">
+            <span>📞 Phone</span>
+            <strong id="confirmPhone">-</strong>
+        </div>
+
+        <div class="detail-row">
+            <span>💇 Service</span>
+            <strong id="confirmService">-</strong>
+        </div>
+
+        <div class="detail-row">
+            <span>💰 Price</span>
+            <strong id="confirmPrice">-</strong>
+        </div>
+
+        <div class="detail-row">
+            <span>📅 Date</span>
+            <strong id="confirmDate">-</strong>
+        </div>
+
+        <div class="detail-row">
+            <span>🕐 Time</span>
+            <strong id="confirmTime">-</strong>
+        </div>
+
+        <div class="detail-row notes-row">
+            <span>📝 Notes</span>
+            <strong id="confirmNotes">None</strong>
+        </div>
+
+    </div>
+
+    <div class="confirmation-message">
+        <p>
+            ✨ Your appointment has been recorded.
+        </p>
+
+        <p>
+            Please contact us on WhatsApp to confirm
+            your appointment.
+        </p>
+    </div>
+
+    <div class="confirmation-buttons">
+
+        <button
+            type="button"
+            id="whatsappConfirm"
+            class="whatsapp-button"
+        >
+            💬 Confirm on WhatsApp
+        </button>
+
+        <button
+            type="button"
+            id="newBooking"
+            class="new-booking-button"
+        >
+            📅 Book Another Appointment
+        </button>
+
+    </div>
+
+</div>
 <div id="successMessage" class="success-message">
 
     <div class="success-icon">
@@ -2599,7 +2981,94 @@ function displayBookings() {
 
 }
 
+// =========================================
+// SHOW PROFESSIONAL BOOKING CONFIRMATION
+// =========================================
 
+function showBookingConfirmation(
+    name,
+    phone,
+    service,
+    price,
+    date,
+    time,
+    notes
+) {
+
+    document.getElementById("confirmName")
+        .textContent = name;
+
+    document.getElementById("confirmPhone")
+        .textContent = phone;
+
+    document.getElementById("confirmService")
+        .textContent = service;
+
+    document.getElementById("confirmPrice")
+        .textContent = "KSh " + price;
+
+    document.getElementById("confirmDate")
+        .textContent = date;
+
+    document.getElementById("confirmTime")
+        .textContent = time;
+
+    document.getElementById("confirmNotes")
+        .textContent = notes || "None";
+
+    document.getElementById("bookingConfirmation")
+        .style.display = "block";
+
+    document.getElementById("bookingConfirmation")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+}
+  // =========================================
+// WHATSAPP CONFIRMATION
+// =========================================
+
+let latestBooking = null;
+
+
+document.getElementById("whatsappConfirm")
+    .addEventListener("click", function () {
+
+        if (!latestBooking) {
+            return;
+        }
+
+        const message =
+`Hello MAMA DAIZY SALON 💜
+
+I would like to confirm my appointment.
+
+👤 Name: ${latestBooking.name}
+📞 Phone: ${latestBooking.phone}
+💇 Service: ${latestBooking.service}
+💰 Price: KSh ${latestBooking.price}
+📅 Date: ${latestBooking.date}
+🕐 Time: ${latestBooking.time}
+📝 Notes: ${latestBooking.notes || "None"}
+
+Thank you! 🌸`;
+
+        const whatsappNumber = "254796311209";
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    });      
 // =========================
 // DELETE ONE BOOKING
 // =========================
