@@ -1,0 +1,1756 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book an Appointment | MAMA DAIZY SALON</title>
+
+    <meta
+        name="description"
+        content="Book your appointment at MAMA DAIZY SALON."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff8fc,
+                    #f8edfa
+                );
+
+            color: #4b164c;
+
+            line-height: 1.6;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 9999;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 3px 15px
+                rgba(75, 22, 76, 0.10);
+
+        }
+
+
+        .nav-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 15px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .logo {
+
+            text-decoration: none;
+
+            color: #7b286f;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            line-height: 1.1;
+
+        }
+
+
+        .logo span {
+
+            display: block;
+
+            color: #c45b9b;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+        .nav-links a {
+
+            color: #4b164c;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #c45b9b;
+
+        }
+
+
+        .menu-button {
+
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            color: #7b286f;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+
+            text-align: center;
+
+            padding:
+                60px 20px 30px;
+
+        }
+
+
+        .eyebrow {
+
+            color: #c45b9b;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .page-header h1 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: #64205f;
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .page-header p {
+
+            color: #76536f;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+
+        /* =========================
+           BOOKING AREA
+        ========================= */
+
+        .booking-wrapper {
+
+            max-width: 850px;
+
+            margin:
+                20px auto 80px;
+
+            padding: 0 20px;
+
+        }
+
+
+        .booking-card {
+
+            background: #ffffff;
+
+            border:
+                1px solid #f0d4e4;
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(75, 22, 76, 0.10);
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #64205f;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid #e6c7dc;
+
+            border-radius: 10px;
+
+            background: #fffafd;
+
+            color: #4b164c;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            outline: none;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #c45b9b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(196, 91, 155, 0.10);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 110px;
+
+            resize: vertical;
+
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+
+        }
+
+
+        /* =========================
+           PRICE DISPLAY
+        ========================= */
+
+        .price-box {
+
+            display: none;
+
+            margin:
+                5px 0 22px;
+
+            padding: 15px;
+
+            background: #fff0f8;
+
+            border:
+                1px solid #efc9df;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+        }
+
+
+        .price-box.show {
+
+            display: block;
+
+        }
+
+
+        .price-label {
+
+            display: block;
+
+            color: #76536f;
+
+            font-size: 13px;
+
+        }
+
+
+        .price-value {
+
+            display: block;
+
+            margin-top: 3px;
+
+            color: #7b286f;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-button {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            background: #7b286f;
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .submit-button:hover {
+
+            background: #9b3f91;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           CONFIRMATION
+        ========================= */
+
+        .confirmation {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 28px;
+
+            border-radius: 18px;
+
+            background: #fff8fc;
+
+            border:
+                1px solid #efc9df;
+
+        }
+
+
+        .confirmation.show {
+
+            display: block;
+
+        }
+
+
+        .confirmation h2 {
+
+            color: #64205f;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .confirmation-intro {
+
+            color: #76536f;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .appointment-details {
+
+            background: #ffffff;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .detail-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 9px 0;
+
+            border-bottom:
+                1px solid #f1dce8;
+
+        }
+
+
+        .detail-row:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .detail-label {
+
+            font-weight: bold;
+
+            color: #64205f;
+
+        }
+
+
+        .detail-value {
+
+            text-align: right;
+
+            color: #76536f;
+
+        }
+
+
+        .whatsapp-confirm {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 14px;
+
+            background: #7b286f;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .new-booking {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 12px;
+
+            background: transparent;
+
+            color: #7b286f;
+
+            border:
+                1px solid #d8a6c8;
+
+            border-radius: 11px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           WHATSAPP FLOATING BUTTON
+        ========================= */
+
+        .floating-whatsapp {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #7b286f;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 24px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(75, 22, 76, 0.25);
+
+            z-index: 9998;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #64205f;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+        }
+
+
+        footer h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+        }
+
+
+        footer p {
+
+            margin-top: 7px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+
+                padding:
+                    14px 18px;
+
+            }
+
+
+            .menu-button {
+
+                display: block;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 100%;
+
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                background: #ffffff;
+
+                box-shadow:
+                    0 10px 20px
+                    rgba(75, 22, 76, 0.12);
+
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+
+            }
+
+
+            .nav-links a {
+
+                width: 100%;
+
+                padding: 16px;
+
+                text-align: center;
+
+                border-bottom:
+                    1px solid #f3dce9;
+
+            }
+
+
+            .page-header {
+
+                padding:
+                    50px 18px 25px;
+
+            }
+
+
+            .page-header h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .booking-wrapper {
+
+                padding:
+                    0 15px;
+
+            }
+
+
+            .booking-card {
+
+                padding: 22px 18px;
+
+                border-radius: 18px;
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .detail-row {
+
+                flex-direction: column;
+
+                gap: 3px;
+
+            }
+
+
+            .detail-value {
+
+                text-align: left;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                MAMA DAIZY
+                <span>SALON</span>
+            </a>
+
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="reviews.html">
+                    Reviews
+                </a>
+
+                <a href="booking.html">
+                    Book
+                </a>
+
+                <a href="appointments.html">
+                    Appointments
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            MAMA DAIZY SALON
+        </div>
+
+        <h1>
+            Book an Appointment 💜
+        </h1>
+
+        <p>
+            Choose your service, preferred date
+            and time. Your booking details will
+            be prepared for confirmation through
+            WhatsApp.
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         BOOKING FORM
+    ========================= -->
+
+    <main class="booking-wrapper">
+
+        <div class="booking-card">
+
+            <form id="bookingForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="e.g. 0712345678"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- SERVICE -->
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Select Service
+                    </label>
+
+                    <select
+                        id="service"
+                        required
+                    >
+
+                        <option value="">
+                            -- Select a service --
+                        </option>
+
+                        <option
+                            value="Knotless Braids"
+                            data-price="800"
+                        >
+                            Knotless Braids — KSh 800
+                        </option>
+
+                        <option
+                            value="Box Braids"
+                            data-price="600"
+                        >
+                            Box Braids — KSh 600
+                        </option>
+
+                        <option
+                            value="Cornrows"
+                            data-price="500"
+                        >
+                            Cornrows — KSh 500
+                        </option>
+
+                        <option
+                            value="Nail Polish"
+                            data-price="400"
+                        >
+                            Nail Polish — KSh 400
+                        </option>
+
+                        <option
+                            value="Wash & Blowdry"
+                            data-price="150"
+                        >
+                            Wash &amp; Blowdry — KSh 150
+                        </option>
+
+                        <option
+                            value="Crochet"
+                            data-price="600"
+                        >
+                            Crochet — KSh 600
+                        </option>
+
+                        <option
+                            value="Zigzag"
+                            data-price="300"
+                        >
+                            Zigzag — KSh 300
+                        </option>
+
+                        <option
+                            value="Plain Lines"
+                            data-price="200"
+                        >
+                            Plain Lines — KSh 200
+                        </option>
+
+                        <option
+                            value="Twistout"
+                            data-price="450"
+                        >
+                            Twistout — KSh 450
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PRICE -->
+
+                <div
+                    class="price-box"
+                    id="priceBox"
+                >
+
+                    <span class="price-label">
+                        Service Price
+                    </span>
+
+                    <span
+                        class="price-value"
+                        id="priceValue"
+                    >
+                        KSh 0
+                    </span>
+
+                </div>
+
+
+
+                <!-- DATE AND TIME -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="appointmentDate">
+                            Appointment Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="appointmentDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="appointmentTime">
+                            Appointment Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="appointmentTime"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Any special requests or information?"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    💜 Prepare My Booking
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =========================
+                 CONFIRMATION
+            ========================= -->
+
+            <section
+                class="confirmation"
+                id="confirmation"
+            >
+
+                <h2>
+                    Booking Details Ready! 💜
+                </h2>
+
+                <p class="confirmation-intro">
+                    Please send these details on
+                    WhatsApp to confirm your appointment.
+                </p>
+
+
+                <div class="appointment-details">
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Name
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmName"
+                        ></span>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Phone
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmPhone"
+                        ></span>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Service
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmService"
+                        ></span>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Price
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmPrice"
+                        ></span>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Date
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmDate"
+                        ></span>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Time
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmTime"
+                        ></span>
+
+                    </div>
+
+
+                    <div
+                        class="detail-row"
+                        id="notesRow"
+                    >
+
+                        <span class="detail-label">
+                            Notes
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="confirmNotes"
+                        ></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <a
+                    href="#"
+                    id="whatsappConfirm"
+                    class="whatsapp-confirm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    💬 Send Booking Details on WhatsApp
+                </a>
+
+
+                <button
+                    type="button"
+                    class="new-booking"
+                    id="newBooking"
+                >
+                    Book Another Appointment
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FLOATING WHATSAPP
+    ========================= -->
+
+    <a
+        href="https://wa.me/254796311209?text=Hello%20Mama%20Daizy%20Salon%20%F0%9F%92%9C"
+        class="floating-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Mama Daizy Salon"
+    >
+        💬
+    </a>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            MAMA DAIZY SALON
+        </h3>
+
+        <p>
+            Beauty starts here. 💜
+        </p>
+
+        <p>
+            © 2026 Mama Daizy Salon
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        navLinks.querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           SERVICE PRICE
+        ========================= */
+
+        const service =
+            document.getElementById("service");
+
+        const priceBox =
+            document.getElementById("priceBox");
+
+        const priceValue =
+            document.getElementById("priceValue");
+
+
+        service.addEventListener(
+            "change",
+            function () {
+
+                const selected =
+                    service.options[
+                        service.selectedIndex
+                    ];
+
+
+                const price =
+                    selected.getAttribute(
+                        "data-price"
+                    );
+
+
+                if (price) {
+
+                    priceValue.textContent =
+                        "KSh " + price;
+
+                    priceBox.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    priceBox.classList.remove(
+                        "show"
+                    );
+
+                    priceValue.textContent =
+                        "KSh 0";
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           PREVENT PAST DATES
+        ========================= */
+
+        const dateInput =
+            document.getElementById(
+                "appointmentDate"
+            );
+
+
+        const today =
+            new Date();
+
+
+        const year =
+            today.getFullYear();
+
+
+        const month =
+            String(
+                today.getMonth() + 1
+            ).padStart(2, "0");
+
+
+        const day =
+            String(
+                today.getDate()
+            ).padStart(2, "0");
+
+
+        dateInput.min =
+            `${year}-${month}-${day}`;
+
+
+
+        /* =========================
+           BOOKING FORM
+        ========================= */
+
+        const bookingForm =
+            document.getElementById(
+                "bookingForm"
+            );
+
+
+        const confirmation =
+            document.getElementById(
+                "confirmation"
+            );
+
+
+        bookingForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "customerName"
+                    ).value.trim();
+
+
+                const phone =
+                    document.getElementById(
+                        "customerPhone"
+                    ).value.trim();
+
+
+                const selectedService =
+                    service.options[
+                        service.selectedIndex
+                    ];
+
+
+                const serviceName =
+                    selectedService.value;
+
+
+                const price =
+                    selectedService.getAttribute(
+                        "data-price"
+                    );
+
+
+                const date =
+                    dateInput.value;
+
+
+                const time =
+                    document.getElementById(
+                        "appointmentTime"
+                    ).value;
+
+
+                const notes =
+                    document.getElementById(
+                        "notes"
+                    ).value.trim();
+
+
+
+                /* =========================
+                   DISPLAY DETAILS
+                ========================= */
+
+                document.getElementById(
+                    "confirmName"
+                ).textContent =
+                    name;
+
+
+                document.getElementById(
+                    "confirmPhone"
+                ).textContent =
+                    phone;
+
+
+                document.getElementById(
+                    "confirmService"
+                ).textContent =
+                    serviceName;
+
+
+                document.getElementById(
+                    "confirmPrice"
+                ).textContent =
+                    "KSh " + price;
+
+
+                document.getElementById(
+                    "confirmDate"
+                ).textContent =
+                    formatDate(date);
+
+
+                document.getElementById(
+                    "confirmTime"
+                ).textContent =
+                    formatTime(time);
+
+
+                const notesRow =
+                    document.getElementById(
+                        "notesRow"
+                    );
+
+
+                document.getElementById(
+                    "confirmNotes"
+                ).textContent =
+                    notes || "None";
+
+
+                if (notes) {
+
+                    notesRow.style.display =
+                        "flex";
+
+                } else {
+
+                    notesRow.style.display =
+                        "flex";
+
+                }
+
+
+
+                /* =========================
+                   WHATSAPP MESSAGE
+                ========================= */
+
+                const message =
+`Hello MAMA DAIZY SALON 💜
+
+I would like to confirm an appointment.
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+💇 Service: ${serviceName}
+💰 Price: KSh ${price}
+📅 Date: ${formatDate(date)}
+🕐 Time: ${formatTime(time)}
+📝 Notes: ${notes || "None"}
+
+Please confirm my appointment. Thank you!`;
+
+
+                const whatsappURL =
+                    "https://wa.me/254796311209?text="
+                    +
+                    encodeURIComponent(
+                        message
+                    );
+
+
+                document.getElementById(
+                    "whatsappConfirm"
+                ).href =
+                    whatsappURL;
+
+
+
+                /* =========================
+                   SHOW CONFIRMATION
+                ========================= */
+
+                confirmation.classList.add(
+                    "show"
+                );
+
+
+                confirmation.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+
+
+        /* =========================
+           FORMAT DATE
+        ========================= */
+
+        function formatDate(dateString) {
+
+            if (!dateString) {
+
+                return "";
+
+            }
+
+
+            const date =
+                new Date(
+                    dateString + "T00:00:00"
+                );
+
+
+            return date.toLocaleDateString(
+                "en-KE",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           FORMAT TIME
+        ========================= */
+
+        function formatTime(timeString) {
+
+            if (!timeString) {
+
+                return "";
+
+            }
+
+
+            const parts =
+                timeString.split(":");
+
+
+            let hour =
+                parseInt(
+                    parts[0],
+                    10
+                );
+
+
+            const minute =
+                parts[1];
+
+
+            const period =
+                hour >= 12
+                    ? "PM"
+                    : "AM";
+
+
+            hour =
+                hour % 12 || 12;
+
+
+            return `${hour}:${minute} ${period}`;
+
+        }
+
+
+
+        /* =========================
+           NEW BOOKING
+        ========================= */
+
+        document.getElementById(
+            "newBooking"
+        ).addEventListener(
+            "click",
+            function () {
+
+                bookingForm.reset();
+
+                confirmation.classList.remove(
+                    "show"
+                );
+
+                priceBox.classList.remove(
+                    "show"
+                );
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
