@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Services | MAMA DAIZY SALON</title>
+
+    <meta
+        name="description"
+        content="Explore MAMA DAIZY SALON services including knotless braids, box braids, cornrows, nail polish, wash and blowdry, crochet, zigzag, plain lines and twistout."
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff8fc,
+                    #f8edfa
+                );
+
+            color: #4b164c;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .main-nav {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 6%;
+
+            background: white;
+
+            box-shadow:
+                0 3px 15px
+                rgba(75, 22, 76, 0.10);
+
+        }
+
+
+        .nav-brand {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #7b286f;
+
+            line-height: 1.1;
+
+        }
+
+
+        .nav-brand span {
+
+            display: block;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            color: #c45b9b;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: #4b164c;
+
+            font-weight: 600;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #c45b9b;
+
+        }
+
+
+        .menu-toggle {
+
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            color: #7b286f;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+
+            text-align: center;
+
+            padding: 75px 20px 45px;
+
+        }
+
+
+        .page-header .small-heading {
+
+            color: #c45b9b;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .page-header h1 {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 42px;
+
+            color: #64205f;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .page-header p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #76536f;
+
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-container {
+
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            padding: 20px 6% 80px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .service-card {
+
+            background: white;
+
+            border: 1px solid #f0d4e4;
+
+            border-radius: 20px;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(75, 22, 76, 0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(75, 22, 76, 0.14);
+
+        }
+
+
+        .service-icon {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .service-card h2 {
+
+            font-family:
+                Georgia,
+                serif;
+
+            color: #64205f;
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .service-card p {
+
+            color: #76536f;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .service-price {
+
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border-radius: 30px;
+
+            background: #fff0f8;
+
+            border: 1px solid #efc9df;
+
+            color: #7b286f;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .book-button {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background: #7b286f;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+        .book-button:hover {
+
+            background: #9b3f91;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background: #64205f;
+
+            color: white;
+
+        }
+
+
+        footer strong {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 20px;
+
+        }
+
+
+        footer p {
+
+            margin-top: 8px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .main-nav {
+
+                padding: 14px 18px;
+
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 100%;
+
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                background: white;
+
+                box-shadow:
+                    0 10px 20px
+                    rgba(75, 22, 76, 0.12);
+
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+
+            }
+
+
+            .nav-links a {
+
+                padding: 16px 22px;
+
+                border-bottom:
+                    1px solid #f3dce9;
+
+                text-align: center;
+
+            }
+
+
+            .page-header {
+
+                padding:
+                    55px 20px 30px;
+
+            }
+
+
+            .page-header h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .services-container {
+
+                grid-template-columns: 1fr;
+
+                padding:
+                    20px 18px 60px;
+
+                gap: 18px;
+
+            }
+
+
+            .service-card {
+
+                padding: 25px 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="main-nav">
+
+        <a
+            href="index.html"
+            class="nav-brand"
+            style="text-decoration: none;"
+        >
+            MAMA DAIZY
+            <span>SALON</span>
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <div
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+            <a href="booking.html">
+                Book
+            </a>
+
+            <a href="appointments.html">
+                Appointments
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================= -->
+
+    <header class="page-header">
+
+        <p class="small-heading">
+            MAMA DAIZY SALON
+        </p>
+
+        <h1>
+            Our Services 💜
+        </h1>
+
+        <p>
+            Discover beautiful hairstyles and
+            salon services created to make you
+            look and feel your best.
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <main>
+
+        <div class="services-container">
+
+
+            <!-- KNOTLESS -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💜
+                </div>
+
+                <h2>
+                    Knotless Braids
+                </h2>
+
+                <p>
+                    Neat and stylish knotless braids
+                    for a beautiful, comfortable look.
+                </p>
+
+                <div class="service-price">
+                    KSh 800
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- BOX BRAIDS -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ✨
+                </div>
+
+                <h2>
+                    Box Braids
+                </h2>
+
+                <p>
+                    Classic box braids designed for
+                    a stylish and confident look.
+                </p>
+
+                <div class="service-price">
+                    KSh 600
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- CORNROWS -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🌸
+                </div>
+
+                <h2>
+                    Cornrows
+                </h2>
+
+                <p>
+                    Clean and beautiful cornrow styles
+                    for an elegant finish.
+                </p>
+
+                <div class="service-price">
+                    KSh 500
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- NAIL POLISH -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💅
+                </div>
+
+                <h2>
+                    Nail Polish
+                </h2>
+
+                <p>
+                    Add a beautiful finishing touch
+                    with our nail polish service.
+                </p>
+
+                <div class="service-price">
+                    KSh 400
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- WASH & BLOWDRY -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🫧
+                </div>
+
+                <h2>
+                    Wash & Blowdry
+                </h2>
+
+                <p>
+                    Refresh your hair with a relaxing
+                    wash and professional blowdry.
+                </p>
+
+                <div class="service-price">
+                    KSh 150
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- CROCHET -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💫
+                </div>
+
+                <h2>
+                    Crochet
+                </h2>
+
+                <p>
+                    Stylish crochet installation for
+                    a beautiful and versatile look.
+                </p>
+
+                <div class="service-price">
+                    KSh 600
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- ZIGZAG -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h2>
+                    Zigzag
+                </h2>
+
+                <p>
+                    Creative zigzag lines for a unique
+                    and stylish hairstyle.
+                </p>
+
+                <div class="service-price">
+                    KSh 300
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- PLAIN LINES -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🌷
+                </div>
+
+                <h2>
+                    Plain Lines
+                </h2>
+
+                <p>
+                    Simple, neat and classic lines
+                    for an elegant everyday style.
+                </p>
+
+                <div class="service-price">
+                    KSh 200
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+            <!-- TWISTOUT -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🌀
+                </div>
+
+                <h2>
+                    Twistout
+                </h2>
+
+                <p>
+                    Beautiful defined twists for a
+                    soft and stylish natural look.
+                </p>
+
+                <div class="service-price">
+                    KSh 450
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="book-button"
+                >
+                    Book This Service
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <strong>
+            MAMA DAIZY SALON
+        </strong>
+
+        <p>
+            Beauty starts here. 💜
+        </p>
+
+        <p>
+            © 2026 Mama Daizy Salon
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         MOBILE MENU
+    ========================= -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById(
+                "menuToggle"
+            );
+
+        const navLinks =
+            document.getElementById(
+                "navLinks"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+
+        const menuItems =
+            document.querySelectorAll(
+                "#navLinks a"
+            );
+
+
+        menuItems.forEach(
+            function (item) {
+
+                item.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
