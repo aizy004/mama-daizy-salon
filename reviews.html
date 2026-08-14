@@ -1,0 +1,671 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews | MAMA DAIZY SALON</title>
+
+    <meta
+        name="description"
+        content="Read customer reviews and share your experience with MAMA DAIZY SALON."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fff8fc, #f8edfa);
+            color: #4b164c;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(75, 22, 76, 0.10);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #7b286f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            display: block;
+            color: #c45b9b;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #4b164c;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #c45b9b;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: transparent;
+            color: #7b286f;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .eyebrow {
+            color: #c45b9b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #64205f;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            max-width: 650px;
+            margin: auto;
+            color: #76536f;
+        }
+
+        /* REVIEWS */
+
+        .reviews-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 20px 80px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border: 1px solid #f0d4e4;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(75, 22, 76, 0.08);
+        }
+
+        .stars {
+            color: #c45b9b;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            color: #76536f;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .review-name {
+            color: #64205f;
+            font-weight: bold;
+        }
+
+        /* REVIEW FORM */
+
+        .review-form-card {
+            max-width: 700px;
+            margin: 45px auto 0;
+            background: #ffffff;
+            border: 1px solid #f0d4e4;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(75, 22, 76, 0.08);
+        }
+
+        .review-form-card h2 {
+            text-align: center;
+            color: #64205f;
+            font-family: Georgia, "Times New Roman", serif;
+            margin-bottom: 8px;
+        }
+
+        .review-form-card > p {
+            text-align: center;
+            color: #76536f;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #64205f;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #e6c7dc;
+            border-radius: 10px;
+            background: #fffafd;
+            color: #4b164c;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 11px;
+            background: #7b286f;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #9b3f91;
+        }
+
+        .review-message {
+            display: none;
+            margin-top: 18px;
+            padding: 15px;
+            background: #fff0f8;
+            border: 1px solid #efc9df;
+            border-radius: 10px;
+            color: #64205f;
+            text-align: center;
+        }
+
+        /* WHATSAPP */
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #7b286f;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(75, 22, 76, 0.25);
+            z-index: 9998;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #64205f;
+            color: #ffffff;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        footer p {
+            margin-top: 7px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                padding: 14px 18px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                box-shadow: 0 10px 20px rgba(75, 22, 76, 0.12);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 16px;
+                text-align: center;
+                border-bottom: 1px solid #f3dce9;
+            }
+
+            .page-header {
+                padding: 50px 18px 25px;
+            }
+
+            .page-header h1 {
+                font-size: 34px;
+            }
+
+            .reviews-container {
+                padding: 15px 18px 60px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-form-card {
+                padding: 22px 18px;
+                margin-top: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                MAMA DAIZY
+                <span>SALON</span>
+            </a>
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+            >
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="index.html">Home</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="reviews.html">Reviews</a>
+
+                <a href="booking.html">Book</a>
+
+                <a href="appointments.html">Appointments</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            MAMA DAIZY SALON
+        </div>
+
+        <h1>
+            What Our Clients Say 💜
+        </h1>
+
+        <p>
+            Your experience matters to us.
+            Read what our clients have to say
+            and share your own experience.
+        </p>
+
+    </header>
+
+
+    <!-- REVIEWS -->
+
+    <main class="reviews-container">
+
+        <section class="reviews-grid" id="reviewsGrid">
+
+            <article class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    I loved my hairstyle! The service
+                    was neat, professional and beautiful.
+                </p>
+
+                <div class="review-name">
+                    — Happy Client
+                </div>
+
+            </article>
+
+
+            <article class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    Very friendly service and my braids
+                    came out exactly how I wanted them.
+                </p>
+
+                <div class="review-name">
+                    — Happy Client
+                </div>
+
+            </article>
+
+
+            <article class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    Beautiful work and affordable prices.
+                    I will definitely come back again.
+                </p>
+
+                <div class="review-name">
+                    — Happy Client
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- REVIEW FORM -->
+
+        <section class="review-form-card">
+
+            <h2>
+                Leave a Review 💜
+            </h2>
+
+            <p>
+                Tell us about your experience
+                at MAMA DAIZY SALON.
+            </p>
+
+            <form id="reviewForm">
+
+                <div class="form-group">
+
+                    <label for="reviewName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reviewName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="rating">
+                        Rating
+                    </label>
+
+                    <select id="rating" required>
+
+                        <option value="">
+                            Select your rating
+                        </option>
+
+                        <option value="5">
+                            ★★★★★ — Excellent
+                        </option>
+
+                        <option value="4">
+                            ★★★★☆ — Very Good
+                        </option>
+
+                        <option value="3">
+                            ★★★☆☆ — Good
+                        </option>
+
+                        <option value="2">
+                            ★★☆☆☆ — Fair
+                        </option>
+
+                        <option value="1">
+                            ★☆☆☆☆ — Poor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="reviewText">
+                        Your Review
+                    </label>
+
+                    <textarea
+                        id="reviewText"
+                        placeholder="Write your review..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit Review
+                </button>
+
+            </form>
+
+
+            <div
+                class="review-message"
+                id="reviewMessage"
+            >
+                Thank you for your review! 💜
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        href="https://wa.me/254796311209?text=Hello%20Mama%20Daizy%20Salon%20%F0%9F%92%9C"
+        class="floating-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬
+    </a>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            MAMA DAIZY SALON
+        </h3>
+
+        <p>
+            Beauty starts here. 💜
+        </p>
+
+        <p>
+            © 2026 Mama Daizy Salon
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* MOBILE MENU */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        /* REVIEW FORM */
+
+        const reviewForm =
+            document.getElementById("reviewForm");
+
+        const reviewMessage =
+            document.getElementById("reviewMessage");
+
+        reviewForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                reviewMessage.style.display =
+                    "block";
+
+                reviewForm.reset();
+
+                reviewMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
+```
