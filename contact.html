@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact | MAMA DAIZY SALON</title>
+
+    <meta
+        name="description"
+        content="Contact MAMA DAIZY SALON for appointments, services and enquiries."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fff8fc, #f8edfa);
+            color: #4b164c;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(75, 22, 76, 0.10);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #7b286f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            display: block;
+            color: #c45b9b;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #4b164c;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #c45b9b;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: transparent;
+            color: #7b286f;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .eyebrow {
+            color: #c45b9b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #64205f;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            max-width: 650px;
+            margin: auto;
+            color: #76536f;
+        }
+
+        /* CONTACT AREA */
+
+        .contact-container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 20px 20px 80px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border: 1px solid #f0d4e4;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 12px 35px rgba(75, 22, 76, 0.08);
+        }
+
+        .contact-card h2 {
+            color: #64205f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        /* CONTACT ITEMS */
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid #f1dce8;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff0f8;
+            border-radius: 50%;
+            font-size: 21px;
+        }
+
+        .contact-item h3 {
+            color: #64205f;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #76536f;
+            font-size: 14px;
+        }
+
+        .contact-item a {
+            color: #7b286f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: #c45b9b;
+        }
+
+        /* WHATSAPP BUTTON */
+
+        .whatsapp-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 11px;
+            background: #7b286f;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #9b3f91;
+            transform: translateY(-2px);
+        }
+
+        /* LOCATION CARD */
+
+        .location-box {
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #fff8fc;
+            border: 1px solid #f0d4e4;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .location-box .location-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .location-box h3 {
+            color: #64205f;
+            margin-bottom: 5px;
+        }
+
+        .location-box p {
+            color: #76536f;
+            font-size: 14px;
+        }
+
+        /* HOURS */
+
+        .hours {
+            margin-top: 25px;
+        }
+
+        .hours h2 {
+            margin-bottom: 15px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1dce8;
+            color: #76536f;
+            font-size: 14px;
+        }
+
+        .hours-row strong {
+            color: #64205f;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #64205f;
+            color: #ffffff;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        footer p {
+            margin-top: 7px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* FLOATING WHATSAPP */
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #7b286f;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(75, 22, 76, 0.25);
+            z-index: 9998;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                padding: 14px 18px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                box-shadow: 0 10px 20px rgba(75, 22, 76, 0.12);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 16px;
+                text-align: center;
+                border-bottom: 1px solid #f3dce9;
+            }
+
+            .page-header {
+                padding: 50px 18px 25px;
+            }
+
+            .page-header h1 {
+                font-size: 34px;
+            }
+
+            .contact-container {
+                padding: 15px 18px 60px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 22px 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                MAMA DAIZY
+                <span>SALON</span>
+            </a>
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="index.html">Home</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="reviews.html">Reviews</a>
+
+                <a href="booking.html">Book</a>
+
+                <a href="appointments.html">Appointments</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            MAMA DAIZY SALON
+        </div>
+
+        <h1>
+            Contact Us 💜
+        </h1>
+
+        <p>
+            Have a question or want to book an
+            appointment? We'd love to hear from you.
+        </p>
+
+    </header>
+
+
+    <!-- CONTACT CONTENT -->
+
+    <main class="contact-container">
+
+        <div class="contact-grid">
+
+
+            <!-- CONTACT DETAILS -->
+
+            <section class="contact-card">
+
+                <h2>
+                    Get in Touch
+                </h2>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+                            <a href="tel:+254796311209">
+                                0796 311 209
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+                        <p>
+                            Chat with us about
+                            appointments and services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            Salon location details
+                            available through WhatsApp.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://wa.me/254796311209?text=Hello%20MAMA%20DAIZY%20SALON%20%F0%9F%92%9C%20I%20would%20like%20to%20make%20an%20enquiry."
+                    class="whatsapp-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    💬 Chat With Us on WhatsApp
+                </a>
+
+            </section>
+
+
+            <!-- LOCATION -->
+
+            <section class="contact-card">
+
+                <h2>
+                    Find Us 📍
+                </h2>
+
+                <div class="location-box">
+
+                    <div>
+
+                        <div class="location-icon">
+                            📍
+                        </div>
+
+                        <h3>
+                            MAMA DAIZY SALON
+                        </h3>
+
+                        <p>
+                            Contact us on WhatsApp
+                            for the exact salon location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOURS -->
+
+                <div class="hours">
+
+                    <h2>
+                        Opening Hours 🕐
+                    </h2>
+
+                    <div class="hours-row">
+                        <strong>Monday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Tuesday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Wednesday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Thursday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Friday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Saturday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                    <div class="hours-row">
+                        <strong>Sunday</strong>
+                        <span>Contact us</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <a
+        href="https://wa.me/254796311209?text=Hello%20MAMA%20DAIZY%20SALON%20%F0%9F%92%9C"
+        class="floating-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Mama Daizy Salon"
+    >
+        💬
+    </a>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            MAMA DAIZY SALON
+        </h3>
+
+        <p>
+            Beauty starts here. 💜
+        </p>
+
+        <p>
+            © 2026 Mama Daizy Salon
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        navLinks.querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>
+```
