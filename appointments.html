@@ -1,0 +1,741 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Appointments | MAMA DAIZY SALON</title>
+
+    <meta
+        name="description"
+        content="Manage your appointment with MAMA DAIZY SALON."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fff8fc, #f8edfa);
+            color: #4b164c;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(75, 22, 76, 0.10);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #7b286f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            display: block;
+            color: #c45b9b;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #4b164c;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #c45b9b;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: transparent;
+            color: #7b286f;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .eyebrow {
+            color: #c45b9b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #64205f;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            max-width: 650px;
+            margin: auto;
+            color: #76536f;
+        }
+
+        /* MAIN CARD */
+
+        .appointments-container {
+            max-width: 850px;
+            margin: auto;
+            padding: 20px 20px 80px;
+        }
+
+        .appointment-card {
+            background: #ffffff;
+            border: 1px solid #f0d4e4;
+            border-radius: 22px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(75, 22, 76, 0.10);
+            text-align: center;
+        }
+
+        .appointment-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff0f8;
+            font-size: 35px;
+        }
+
+        .appointment-card h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #64205f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .appointment-card > p {
+            color: #76536f;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        /* STEPS */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .step {
+            padding: 20px 15px;
+            background: #fff8fc;
+            border: 1px solid #f0d4e4;
+            border-radius: 15px;
+        }
+
+        .step-number {
+            width: 35px;
+            height: 35px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #7b286f;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #64205f;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .step p {
+            color: #76536f;
+            font-size: 13px;
+        }
+
+        /* IMPORTANT NOTICE */
+
+        .notice {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fff0f8;
+            border: 1px solid #efc9df;
+            border-radius: 14px;
+            text-align: left;
+        }
+
+        .notice strong {
+            color: #64205f;
+        }
+
+        .notice p {
+            color: #76536f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* BUTTONS */
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 11px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            transition: 0.3s;
+        }
+
+        .book-button {
+            background: #7b286f;
+            color: #ffffff;
+        }
+
+        .book-button:hover {
+            background: #9b3f91;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-button {
+            background: #fff0f8;
+            border: 1px solid #efc9df;
+            color: #7b286f;
+        }
+
+        .whatsapp-button:hover {
+            background: #f8ddeb;
+        }
+
+        /* FAQ */
+
+        .faq-section {
+            max-width: 850px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #64205f;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .faq {
+            background: #ffffff;
+            border: 1px solid #f0d4e4;
+            border-radius: 13px;
+            margin-bottom: 12px;
+            padding: 18px 20px;
+        }
+
+        .faq h3 {
+            color: #64205f;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .faq p {
+            color: #76536f;
+            font-size: 14px;
+        }
+
+        /* WHATSAPP FLOATING BUTTON */
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #7b286f;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(75, 22, 76, 0.25);
+            z-index: 9998;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #64205f;
+            color: #ffffff;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        footer p {
+            margin-top: 7px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                padding: 14px 18px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                box-shadow: 0 10px 20px rgba(75, 22, 76, 0.12);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 16px;
+                text-align: center;
+                border-bottom: 1px solid #f3dce9;
+            }
+
+            .page-header {
+                padding: 50px 18px 25px;
+            }
+
+            .page-header h1 {
+                font-size: 34px;
+            }
+
+            .appointments-container {
+                padding: 15px 18px 60px;
+            }
+
+            .appointment-card {
+                padding: 25px 18px;
+            }
+
+            .appointment-card h2 {
+                font-size: 26px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 0 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                MAMA DAIZY
+                <span>SALON</span>
+            </a>
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="index.html">Home</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="reviews.html">Reviews</a>
+
+                <a href="booking.html">Book</a>
+
+                <a href="appointments.html">Appointments</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            MAMA DAIZY SALON
+        </div>
+
+        <h1>
+            Appointments 📅
+        </h1>
+
+        <p>
+            Ready for your appointment?
+            Book your preferred service and
+            send your details to us on WhatsApp.
+        </p>
+
+    </header>
+
+
+    <!-- APPOINTMENT CONTENT -->
+
+    <main class="appointments-container">
+
+        <section class="appointment-card">
+
+            <div class="appointment-icon">
+                📅
+            </div>
+
+            <h2>
+                Your Appointment
+            </h2>
+
+            <p>
+                We currently confirm appointments
+                through WhatsApp. This keeps the
+                booking process simple and allows us
+                to personally confirm your preferred
+                date and time.
+            </p>
+
+
+            <!-- STEPS -->
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Choose a Service
+                    </h3>
+
+                    <p>
+                        Select the hairstyle or
+                        beauty service you want.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Choose Date & Time
+                    </h3>
+
+                    <p>
+                        Pick your preferred
+                        appointment date and time.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Confirm on WhatsApp
+                    </h3>
+
+                    <p>
+                        Send your booking details
+                        and wait for confirmation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTICE -->
+
+            <div class="notice">
+
+                <strong>
+                    💜 Important
+                </strong>
+
+                <p>
+                    Your appointment is not considered
+                    confirmed until MAMA DAIZY SALON
+                    confirms it through WhatsApp.
+                </p>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <a
+                href="booking.html"
+                class="button book-button"
+            >
+                📅 Make an Appointment
+            </a>
+
+
+            <a
+                href="https://wa.me/254796311209?text=Hello%20MAMA%20DAIZY%20SALON%20%F0%9F%92%9C%20I%20would%20like%20to%20ask%20about%20an%20appointment."
+                class="button whatsapp-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 Ask About My Appointment
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+        <h2>
+            Appointment Questions
+        </h2>
+
+
+        <div class="faq">
+
+            <h3>
+                How do I book?
+            </h3>
+
+            <p>
+                Click "Make an Appointment",
+                complete the booking form and
+                send the details to us on WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <h3>
+                Is my appointment automatically confirmed?
+            </h3>
+
+            <p>
+                No. Your appointment is confirmed
+                once MAMA DAIZY SALON responds
+                and confirms your date and time.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <h3>
+                Can I change my appointment?
+            </h3>
+
+            <p>
+                Yes. Contact us through WhatsApp
+                if you need to change your preferred
+                date or time.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <h3>
+                Do I need to create an account?
+            </h3>
+
+            <p>
+                No. You can book directly through
+                the website without creating an account.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <a
+        href="https://wa.me/254796311209?text=Hello%20MAMA%20DAIZY%20SALON%20%F0%9F%92%9C"
+        class="floating-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Mama Daizy Salon"
+    >
+        💬
+    </a>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            MAMA DAIZY SALON
+        </h3>
+
+        <p>
+            Beauty starts here. 💜
+        </p>
+
+        <p>
+            © 2026 Mama Daizy Salon
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        navLinks.querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>
+```
